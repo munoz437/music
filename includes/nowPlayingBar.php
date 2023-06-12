@@ -191,6 +191,10 @@ function playSong() {
 	audioElement.play();
 }
 
+function setSpeed(speed) {
+    audioElement.audio.playbackRate = speed;
+}
+
 
 function pauseSong() {
 	$(".controlButton.pause").hide();
@@ -199,6 +203,39 @@ function pauseSong() {
 }
 
 </script>
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .fas {
+  font-size: 24px;
+  color: #a0a0a0;
+  background: transparent;
+}
+
+.dropdown .fas:hover {
+  color: #5a5a5a;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 
 
 <div id="nowPlayingBarContainer">
@@ -233,6 +270,15 @@ function pauseSong() {
 					<button class="controlButton shuffle" title="Shuffle" onclick="setShuffle()">
 						<img src="assets/images/icons/shuffle.png" alt="Shuffle">
 					</button>
+					<div class="dropdown">
+					<button class="controlButton previous"><i class="fas fa-fast-backward"></i></button>
+						<div class="dropdown-content">
+							<a href="#" onclick="setSpeed(1)">Normal</a>
+							<a href="#" onclick="setSpeed(0.75)">0.75x</a>
+							<a href="#" onclick="setSpeed(0.5)">0.5x</a>
+							<a href="#" onclick="setSpeed(0.25)">0.25x</a>
+						</div>
+					</div>
 
 					<button class="controlButton previous" title="Previous" onclick="prevSong()">
 						<img src="assets/images/icons/previous.png" alt="Previous">
@@ -250,9 +296,23 @@ function pauseSong() {
 						<img src="assets/images/icons/next.png" alt="Next">
 					</button>
 
+					<div class="dropdown">
+					<button class="controlButton previous"><i class="fas fa-fast-forward"></i></button>
+						<div class="dropdown-content">
+							<a href="#" onclick="setSpeed(1)">Normal</a>
+							<a href="#" onclick="setSpeed(1.25)">1.25x</a>
+							<a href="#" onclick="setSpeed(1.5)">1.5x</a>
+							<a href="#" onclick="setSpeed(1.75)">1.75x</a>
+							<a href="#" onclick="setSpeed(2)">2x</a>
+						</div>
+					</div>
+
 					<button class="controlButton repeat" title="Repeat" onclick="setRepeat()">
 						<img src="assets/images/icons/repeat.png" alt="Repeat">
 					</button>
+					
+					
+
 				</div>
 
 				<div class="playbackBar">
