@@ -22,8 +22,9 @@ if (isset($_SESSION['userLoggedIn'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to Spotify</title>
+	<title>Bienvenido</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="icon" href="assets/images/icons/learning.png">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="assets/js/script.js"></script>
